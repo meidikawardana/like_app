@@ -1,12 +1,10 @@
 # like_app
 
-A new Flutter project.
+This app displays an Instagram post card. The purpose is to practice Stateful Widget by clicking like button
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
+A few resources to get you started for flutter beginners:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
