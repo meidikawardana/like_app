@@ -45,17 +45,18 @@ class InstagramCard extends StatelessWidget {
                 children: <Widget>[
                   IconButton(
                     icon: Image.asset(
-                      'images/ic_love.jpg',
+                      'images/ic_love.png',
                       fit: BoxFit.contain,
+                      width: 24,
                     ),
                     onPressed: () {},
                     padding: EdgeInsets.all(0.0),
                   ),
                   Container(
-                    width: 24,
+                    width: 48,
                     child: IconButton(
                       icon: Image.asset(
-                        'images/ic_comment.jpg',
+                        'images/ic_comment.png',
                         fit: BoxFit.contain,
                       ),
                       onPressed: () {},
@@ -66,7 +67,7 @@ class InstagramCard extends StatelessWidget {
                     child: Container(
                       child: IconButton(
                         icon: Image.asset(
-                          'images/ic_send.jpg',
+                          'images/ic_send.png',
                           fit: BoxFit.contain,
                         ),
                         onPressed: () {},
@@ -77,7 +78,7 @@ class InstagramCard extends StatelessWidget {
                   ),
                   IconButton(
                     icon: Image.asset(
-                      'images/ic_save.jpg',
+                      'images/ic_save.png',
                       fit: BoxFit.contain,
                     ),
                     onPressed: () {},

@@ -42,10 +42,10 @@ flutter:
   assets:
     - images/insta_pic.jpg
     - images/insta_profpic.jpg
-    - images/ic_love.jpg
-    - images/ic_comment.jpg
-    - images/ic_send.jpg
-    - images/ic_save.jpg
+    - images/ic_love.png
+    - images/ic_comment.png
+    - images/ic_send.png
+    - images/ic_save.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
