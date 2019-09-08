@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(AplikasiHelloWorld());
+void main() => runApp(AplikasiLikeInstagram());
 
 class InstagramCard extends StatelessWidget {
   @override
@@ -103,8 +103,8 @@ class InstagramCard extends StatelessWidget {
                 children: <Widget>[
                   RichText(
                     text: new TextSpan(
-                      // Note: Styles for TextSpans must be explicitly defined.
-                      // Child text spans will inherit styles from parent
+                      //catatan: Style untuk TextSpan harus ditulis di source code
+                      //1x tulis di RichText, akan dipakai oleh semua TextSpan yang ada di dalam RichText
                       style: new TextStyle(
                         fontSize: 14.0,
                         color: Colors.black,
@@ -127,12 +127,11 @@ class InstagramCard extends StatelessWidget {
   }
 }
 
-class AplikasiHelloWorld extends StatelessWidget {
+class AplikasiLikeInstagram extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Aplikasi Hello World',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
