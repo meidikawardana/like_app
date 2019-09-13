@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(AplikasiLikeInstagram());
 
-class InstagramCard extends StatelessWidget {
+class InstagramCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -10,7 +10,8 @@ class InstagramCard extends StatelessWidget {
         Column(
           children: <Widget>[
             Row(
-              children: <Widget>[
+              // row #1
+              children: [
                 Container(
                   child: Image.asset(
                     'images/insta_profpic.jpg',
@@ -34,78 +35,68 @@ class InstagramCard extends StatelessWidget {
               ],
             ),
             Row(
+              //row #2
               children: <Widget>[
                 Expanded(
                   child: Image.asset('images/insta_pic.jpg'),
                 )
               ],
             ),
-            Container(
-              child: Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Image.asset(
-                      'images/ic_love.png',
-                      fit: BoxFit.contain,
-                      width: 24,
-                    ),
-                    onPressed: () {},
-                    padding: EdgeInsets.all(0.0),
+            Row(
+              //row #3
+              children: <Widget>[
+                IconButton(
+                  icon: Image.asset(
+                    'images/ic_love.png',
+                    fit: BoxFit.contain,
                   ),
-                  Container(
-                    width: 48,
-                    child: IconButton(
-                      icon: Image.asset(
-                        'images/ic_comment.png',
-                        fit: BoxFit.contain,
-                      ),
-                      onPressed: () {},
-                      padding: EdgeInsets.all(0.0),
-                    ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Image.asset(
+                    'images/ic_comment.png',
+                    fit: BoxFit.contain,
                   ),
-                  Expanded(
-                    child: Container(
-                      child: IconButton(
-                        icon: Image.asset(
-                          'images/ic_send.png',
-                          fit: BoxFit.contain,
-                        ),
-                        onPressed: () {},
-                        padding: EdgeInsets.all(0.0),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Image.asset(
+                    'images/ic_send.png',
+                    fit: BoxFit.contain,
                   ),
-                  IconButton(
+                  onPressed: () {},
+                ),
+                Expanded(
+                  child: IconButton(
                     icon: Image.asset(
                       'images/ic_save.png',
                       fit: BoxFit.contain,
                     ),
                     onPressed: () {},
-                    padding: EdgeInsets.all(0.0),
+                    padding: EdgeInsets.only(right: 10),
+                    alignment: Alignment.centerRight,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.only(left: 10),
-              child: Row(
-                children: <Widget>[
-                  Text(
+            Row(
+              //row #4
+              children: <Widget>[
+                Container(
+                  child: Text(
                     '1 like',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                ],
-              ),
+                  padding: EdgeInsets.only(left: 10),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.only(left: 10, top: 5, bottom: 10),
-              child: Row(
-                children: <Widget>[
-                  RichText(
+            Row(
+              //row #5
+              children: <Widget>[
+                Container(
+                  child: RichText(
                     text: new TextSpan(
-                      //catatan: Style untuk TextSpan harus ditulis di source code
-                      //1x tulis di RichText, akan dipakai oleh semua TextSpan yang ada di dalam RichText
                       style: new TextStyle(
                         fontSize: 14.0,
                         color: Colors.black,
@@ -114,12 +105,16 @@ class InstagramCard extends StatelessWidget {
                         TextSpan(
                             text: 'meidika_wardana ',
                             style: new TextStyle(fontWeight: FontWeight.bold)),
-                        TextSpan(text: 'Lagi lucu2nya nih ... he3'),
+                        TextSpan(
+                            text:
+                                'Lagi lucu2nya nih ... he3. Semoga jadi anak yang berbakti ke ortu :D'),
                       ],
                     ),
                   ),
-                ],
-              ),
+                  padding: EdgeInsets.only(left: 10, top: 5, bottom: 10),
+                  width: MediaQuery.of(context).size.width * 0.8,
+                )
+              ],
             ),
           ],
         ),
@@ -137,7 +132,7 @@ class AplikasiLikeInstagram extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: Scaffold(
-        body: InstagramCard(),
+        body: InstagramCards(),
       ),
     );
   }

@@ -40,12 +40,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/insta_pic.jpg
     - images/insta_profpic.jpg
-    - images/ic_love.png
+    - images/insta_pic.jpg
     - images/ic_comment.png
-    - images/ic_send.png
+    - images/ic_love.png
     - images/ic_save.png
+    - images/ic_send.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
