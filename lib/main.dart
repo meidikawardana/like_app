@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(AplikasiLikeInstagram());
 
-class InstagramCards extends StatelessWidget {
+class InstagramCards extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _InstagramCardsState();
+  }
+}
+
+class _InstagramCardsState extends State<InstagramCards> {
+  int _likes = 0;
+  bool _isLiked = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -46,11 +61,30 @@ class InstagramCards extends StatelessWidget {
               //row #3
               children: <Widget>[
                 IconButton(
-                  icon: Image.asset(
-                    'images/ic_love.png',
-                    fit: BoxFit.contain,
-                  ),
-                  onPressed: () {},
+                  icon: (!_isLiked)
+                      ? Icon(
+                          Icons.favorite_border,
+                          color: Colors.grey,
+                          size: 30.0,
+                        )
+                      : Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 30.0,
+                        ),
+                  onPressed: () {
+                    if (!_isLiked) {
+                      setState(() {
+                        _likes += 1;
+                        _isLiked = true;
+                      });
+                    } else {
+                      setState(() {
+                        _likes -= 1;
+                        _isLiked = false;
+                      });
+                    }
+                  },
                 ),
                 IconButton(
                   icon: Image.asset(
@@ -84,7 +118,7 @@ class InstagramCards extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Text(
-                    '1 like',
+                    _likes.toString() + ' like',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   padding: EdgeInsets.only(left: 10),
@@ -131,9 +165,8 @@ class AplikasiLikeInstagram extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Scaffold(
-        body: InstagramCards(),
-      ),
+      home: Scaffold(body: InstagramCards() //Text('hi, this is body'),
+          ),
     );
   }
 }
