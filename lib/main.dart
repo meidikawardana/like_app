@@ -10,13 +10,8 @@ class InstagramCards extends StatefulWidget {
 }
 
 class _InstagramCardsState extends State<InstagramCards> {
-  int _likes = 0;
-  bool _isLiked = false;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  int _jumlahLike = 0;
+  bool _sudahLike = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,27 +56,27 @@ class _InstagramCardsState extends State<InstagramCards> {
               //row #3
               children: <Widget>[
                 IconButton(
-                  icon: (!_isLiked)
+                  icon: (!_sudahLike)
                       ? Icon(
                           Icons.favorite_border,
                           color: Colors.grey,
-                          size: 30.0,
+                          size: 32.0,
                         )
                       : Icon(
                           Icons.favorite,
                           color: Colors.red,
-                          size: 30.0,
+                          size: 32.0,
                         ),
                   onPressed: () {
-                    if (!_isLiked) {
+                    if (!_sudahLike) {
                       setState(() {
-                        _likes += 1;
-                        _isLiked = true;
+                        _jumlahLike += 1;
+                        _sudahLike = true;
                       });
                     } else {
                       setState(() {
-                        _likes -= 1;
-                        _isLiked = false;
+                        _jumlahLike -= 1;
+                        _sudahLike = false;
                       });
                     }
                   },
@@ -118,7 +113,7 @@ class _InstagramCardsState extends State<InstagramCards> {
               children: <Widget>[
                 Container(
                   child: Text(
-                    _likes.toString() + ' like',
+                    _jumlahLike.toString() + ' like',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   padding: EdgeInsets.only(left: 10),
@@ -165,8 +160,9 @@ class AplikasiLikeInstagram extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Scaffold(body: InstagramCards() //Text('hi, this is body'),
-          ),
+      home: Scaffold(
+        body: InstagramCards(),
+      ),
     );
   }
 }
