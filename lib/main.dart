@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(AplikasiLikeInstagram());
 
-class InstagramCards extends StatelessWidget {
+class InstagramCards extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _InstagramCardsState();
+  }
+}
+
+class _InstagramCardsState extends State<InstagramCards> {
+  int _jumlahLike = 0;
+  bool _sudahLike = false;
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -46,11 +56,30 @@ class InstagramCards extends StatelessWidget {
               //row #3
               children: <Widget>[
                 IconButton(
-                  icon: Image.asset(
-                    'images/ic_love.png',
-                    fit: BoxFit.contain,
-                  ),
-                  onPressed: () {},
+                  icon: (!_sudahLike)
+                      ? Icon(
+                          Icons.favorite_border,
+                          color: Colors.grey,
+                          size: 32.0,
+                        )
+                      : Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 32.0,
+                        ),
+                  onPressed: () {
+                    if (!_sudahLike) {
+                      setState(() {
+                        _jumlahLike += 1;
+                        _sudahLike = true;
+                      });
+                    } else {
+                      setState(() {
+                        _jumlahLike -= 1;
+                        _sudahLike = false;
+                      });
+                    }
+                  },
                 ),
                 IconButton(
                   icon: Image.asset(
@@ -84,7 +113,7 @@ class InstagramCards extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Text(
-                    '1 like',
+                    _jumlahLike.toString() + ' like',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   padding: EdgeInsets.only(left: 10),
